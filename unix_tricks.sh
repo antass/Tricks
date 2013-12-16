@@ -72,3 +72,8 @@ ssh-copy-id -i ~/.ssh/bu_id_rsa.pub aniat@rubysky.bumc.bu.edu
 # The following should work:
 ssh rubysky
 
+### Mass rename files
+exec zsh
+autoload zmv
+zmv 'run_WGCNA(*).R' 'run_WGCNA2$1.R' # will rename run_WGCNA_lam_grt.R to run_WGCNA2_lam_grt.R
+
