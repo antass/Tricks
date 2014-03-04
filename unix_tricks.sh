@@ -80,3 +80,9 @@ zmv 'run_WGCNA(*).R' 'run_WGCNA2$1.R' # will rename run_WGCNA_lam_grt.R to run_W
 ### Find and kill RStudio on SCC
 ps -ef | grep aniat | grep rstudio | awk '{print $2}' | xargs -i -t kill -9 {}
 
+### LinGA queue system
+# get number of running jobs
+qstata | awk '{print $5}' | grep r | wc -l
+# get number of queued jobs
+qstata | awk '{print $5}' | grep wq | wc -l
+
