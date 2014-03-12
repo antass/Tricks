@@ -9,6 +9,9 @@ done
 ll | grep substring_to_find 
 ll | grep -v substring_to_exclude
 
+# Remove files from a (too) long list
+find . -maxdepth 1 -name "name*" -print0 | xargs -0 rm 
+
 # Copy files which match a pattern (I wanted to find all files that started with s5 or s6 or s7)
 ls | grep \&lt;s\(5\|6\|7\)\> | xargs cp -t dest_folder
 
