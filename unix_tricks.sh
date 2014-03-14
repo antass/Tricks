@@ -88,4 +88,6 @@ ps -ef | grep aniat | grep rstudio | awk '{print $2}' | xargs -i -t kill -9 {}
 qstata | awk '{print $5}' | grep r | wc -l
 # get number of queued jobs
 qstata | awk '{print $5}' | grep wq | wc -l
+# another way
+qstata | grep -w r | wc -l
 
