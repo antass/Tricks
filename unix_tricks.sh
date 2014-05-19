@@ -92,4 +92,12 @@ qstata | awk '{print $5}' | grep wq | wc -l
 qstata | grep -w r | wc -l
 
 ### Sync remote and local folders (backup)
-rsync -chavzP --stats user@remote.host:/path/to/copy/ /path/to/local/storage/
+# -c  compare checksums
+# -h  human readable
+# -a  archive - preserve timestamps and permissions
+# -v  verbose
+# -z  compress
+# -P  progress
+# -L  copy links
+# --stats  show file transfer stats
+rsync -chavzPL --stats --exclude='.git/' scc:~/Meta_Analysis/lungevity/lungevity-biomarker /Volumes/LACIE/Meta_Analysis/lungevity/
