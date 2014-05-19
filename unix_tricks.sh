@@ -91,3 +91,5 @@ qstata | awk '{print $5}' | grep wq | wc -l
 # another way
 qstata | grep -w r | wc -l
 
+### Sync remote and local folders (backup)
+rsync -chavzP --stats user@remote.host:/path/to/copy/ /path/to/local/storage/
