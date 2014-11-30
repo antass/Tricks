@@ -104,4 +104,5 @@ rsync -chavzPL --stats --exclude='.git/' scc:~/Meta_Analysis/lungevity/lungevity
 
 ### Rename files - remove duplicated DATE_ATassinari in the documents folder
 # -n dry run
+autoload -U zmv
 zmv '*([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_ATassinari_*)' '$1'
