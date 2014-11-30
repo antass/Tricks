@@ -101,3 +101,7 @@ qstata | grep -w r | wc -l
 # -L  copy links
 # --stats  show file transfer stats
 rsync -chavzPL --stats --exclude='.git/' scc:~/Meta_Analysis/lungevity/lungevity-biomarker /Volumes/LACIE/Meta_Analysis/lungevity/
+
+### Rename files - remove duplicated DATE_ATassinari in the documents folder
+# -n dry run
+zmv '*([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_ATassinari_*)' '$1'
