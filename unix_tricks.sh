@@ -80,6 +80,15 @@ exec zsh
 autoload zmv
 zmv 'run_WGCNA(*).R' 'run_WGCNA2$1.R' # will rename run_WGCNA_lam_grt.R to run_WGCNA2_lam_grt.R
 
+## Rename files - remove duplicated DATE_ATassinari in the documents folder
+# -n dry run
+autoload -U zmv
+zmv '*([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_ATassinari_*)' '$1'
+
+## Replace spaces with underscores
+zmv '* *' '$f:gs/ /_'
+
+
 ### Find and kill RStudio on SCC
 ps -ef | grep aniat | grep rstudio | awk '{print $2}' | xargs -i -t kill -9 {}
 
@@ -102,7 +111,3 @@ qstata | grep -w r | wc -l
 # --stats  show file transfer stats
 rsync -chavzPL --stats --exclude='.git/' scc:~/Meta_Analysis/lungevity/lungevity-biomarker /Volumes/LACIE/Meta_Analysis/lungevity/
 
-### Rename files - remove duplicated DATE_ATassinari in the documents folder
-# -n dry run
-autoload -U zmv
-zmv '*([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_ATassinari_*)' '$1'
