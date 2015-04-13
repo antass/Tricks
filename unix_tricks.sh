@@ -111,3 +111,9 @@ qstata | grep -w r | wc -l
 # --stats  show file transfer stats
 rsync -chavzPL --stats --exclude='.git/' scc:~/Meta_Analysis/lungevity/lungevity-biomarker /Volumes/LACIE/Meta_Analysis/lungevity/
 
+### Find differences in files line-by-line, regardless of teir order
+grep -F -x -v -f fileB fileA
+
+### Find files with at leats given size
+find . -iname "*rda" -size +2000k  # finds RDA files with at least 2MB size
+
