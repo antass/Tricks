@@ -28,3 +28,8 @@ killall Finder
 # find “Toggle Hidden Files”. Double-click on the area to the right of it, then press the keyboard shortcut you want. 
 # I used Command-Shift-. (dot).
 
+## Show running / all apps in Dock
+# Show all
+defaults write com.apple.dock static-only -bool FALSE; killall Dock
+# Show running
+defaults write com.apple.dock static-only -bool TRUE; killall Dock
