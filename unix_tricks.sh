@@ -117,3 +117,6 @@ grep -F -x -v -f fileB fileA
 ### Find files with at leats given size
 find . -iname "*rda" -size +2000k  # finds RDA files with at least 2MB size
 
+### Find and output line matching pattern AND 1 line after it
+grep -A1 pattern file
+
