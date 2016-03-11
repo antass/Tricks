@@ -123,3 +123,12 @@ grep -An pattern file
 ### Find last accessed date for file
 stat file
 
+### Upload files to FTP in parallel
+# Log in to FTP from preferred local directory containing folder with files to upload
+lftp ftp://geo:33%259uyj_fCh%3FM16H@ftp-private.ncbi.nlm.nih.gov/fasp/  # GEO FTP example
+# Navigate to desired remote directory
+# Upload files: -R              reverses sync (upload; default is download)
+#               -L              treats symlinks as files
+#               --parallel[=N]  enables upload of N files at once
+mirror -R -L --parallel=50 folder_with_files_to_upload . 
+
